@@ -1,4 +1,4 @@
-PREPROCESSING MRI
+# PREPROCESSING MRI
 
 Until you get acquainted with the script it is very, very important that you stop and examine the output of each of the steps of the preprocessing. This will help you to conceptually understand the various fixes and also to identify faults or artefacts. In other words, always check with the first participants that all the steps are being carried out properly and the images are changing as expected.
 
