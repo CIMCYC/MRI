@@ -11,3 +11,4 @@ docker run -ti --rm -e 01 -v C:\Users\Usuario\Documents\PYTHON\RESONANCIA/:/data
 This must be modified according to your preprocessing. All the information is available in the previous link.
 
 
+For any questions you can write to pilarsanpe@ugr.es or mariaruizromero@ugr.es
