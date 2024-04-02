@@ -31,7 +31,7 @@ done < "$path2results/$database_file"
 cd "${path2results}/mytbss"
 
 # TBSS standard pipeline
-#Step 1. TBSS implementation
+#Step 1. TBSS implementation. For more detail about the differents flags that can be used, please visit: https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/TBSS/UserGuide
 tbss_1_preproc *.nii.gz
 
 #Step 2. TBSS implementation

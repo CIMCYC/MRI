@@ -1,12 +1,11 @@
 ## TBSS Pipeline - README
 
 ### Introduction
-Welcome to the TBSS Pipeline repository! This project aims to provide a streamlined and efficient pipeline for analyzing diffusion-weighted magnetic resonance imaging (DWI) data using FSL's TBSS (Tract-Based Spatial Statistics) tool. 
+Welcome to the TBSS Pipeline repository! This project aims to provide a streamlined and efficient pipeline for analyzing diffusion-weighted magnetic resonance imaging (DWI) data using FSL's TBSS (Tract-Based Spatial Statistics) tool. This pipeline run fully in command prompt console so, no GUI interfeace is neccesary.
 
 ### Social Media Profiles
 Stay updated with our latest developments and news by following us on social media:
-- Twitter:
-- LinkedIn: 
+- Twitter: https://twitter.com/cimcyc
 
 ### Project Overview
 The TBSS Pipeline project offers a comprehensive solution for processing and analyzing DWI data. By implementing FSL's TBSS tool, researchers can perform voxel-wise statistical analyses to explore the microstructural properties of white matter tracts in the brain. This pipeline provides a standardized workflow that encompasses preprocessing, registration, and statistical analysis, enabling users to derive valuable insights from their DWI data.
@@ -30,12 +29,13 @@ To start using the TBSS Pipeline, follow these steps:
 ### Workflow:
 
 1. Execute 'data_organization.sh' to organize and convert your data.
-2. Execute 'preproc_TBSS.sh' to preprocess your DWI data.
-3. Execute 'run_TBSS.sh' to process the data using TBSS.
-4. Use glm_gui to create your design for further analysis.
-5. Execute 'run_randomise.sh' to perform statistical analysis.
-6. Use 'run_cluster_report.sh' to generate a report on your randomise results.
-7. Visualize the results using fsleyes.
+2. Execute 'preproc_TBSS.sh' to preprocess your DWI data. (this step is recommend to be run in Albaicin HPC, see the 'Directives2runInAlbaicin.txt')
+4. Excecute 'outliersQC_counter.sh' to create the PDF report of image quality control. (https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddyqc/UsersGuide)
+5. Execute 'run_TBSS.sh' to process the data using TBSS. (this step is recommend to be run in Albaicin HPC, see the 'Directives2runInAlbaicin.txt')
+6. Use glm_gui to create your design for further analysis.
+7. Execute 'run_randomise.sh' to perform statistical analysis. (this step is recommend to be run in Albaicin HPC, see the 'Directives2runInAlbaicin.txt')
+8. Use 'run_cluster_report.sh' to generate a report on your randomise results.
+9. Visualize the results using fsleyes.
 
 Note: Make sure to adjust the necessary parameters and paths within the scripts according to your specific data and requirements.
 

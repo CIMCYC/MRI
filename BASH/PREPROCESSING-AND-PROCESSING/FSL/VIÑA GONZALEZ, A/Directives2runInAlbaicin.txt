@@ -1,0 +1,68 @@
+Instructions to run this scripts in HPC Albaicín
+
+To run your script in HPC Albaicín, you need to include specific directives at the top of your script. These directives provide instructions to the job scheduler on how to allocate resources and manage your script execution. Additionally, you may need to load modules and set environment variables to access required software. 
+
+
+Let's break down the directives: (For detailed information please visit: https://supercomputacion.ugr.es/soporte/pages/ayuda/gestion-de-trabajos.php)
+
+    --chdir: Sets the working directory for the script. Replace user_name with your username and specify the desired directory path.
+    --nodes: Specifies the number of nodes required for your job. In this case, it is set to 1.
+    --partition: Specifies the partition to which your job should be submitted. Replace NOParalela with the appropriate partition name.
+    --ntasks: Specifies the total number of tasks or processes needed. Here, it is set to 1.
+    --ntasks-per-node: Specifies the number of tasks per node. Set it to 1 in this case.
+    --job-name: Specifies a name for your job. Replace job_name with a descriptive name.
+    --error: Specifies the path to the file where the error output will be stored. Replace user_name with your username.
+    --output: Specifies the path to the file where the standard output will be stored. Replace user_name with your username.
+    --time: Specifies the maximum runtime for your job. Here, it is set to 50 hours. Adjust it according to your script's requirements.
+
+How to run the job?
+    
+Now you can include your script's commands and code.
+
+Save the file with an appropriate name and a .sh extension (e.g., script_name.sh).
+
+Open a terminal and navigate to the directory containing your script.
+
+Submit your job to the HPC system using the sbatch command followed by the script name: sbatch script_name.sh
+
+Your job will be added to the job queue and will start running once the allocated resources are available. The HPC will assign a numeric code to your job. For example, 27645 and two files '27645.err' and '27645.out' will be created. If a problem occurs during execution, the log will be stored in the .err file. 
+
+You can monitor the status of your job using the squeue command: squeue -j 27645
+
+I you want to cancell the job type:  scancel 27645
+
+Once your job completes, the output and error files specified in the directives will be generated in the specified directories (`/SCRATCH/research_group/user_name/`). You can check the contents of these files to examine the script's output and any error messages.
+
+That's it! You have successfully set up and submitted your script to run in HPC Albaicín. Make sure to customize the directives, module loading, and environment variable sourcing according to your specific requirements. TThe necessary directives that you should put at the beginning of your script are just below this text. Enjoy!
+
+ _ _ _ _ _ _ _ _  
+|Copy from here |
+ - - - - - - - -
+
+#!/bin/bash
+#SBATCH --chdir=/SCRATCH/research_group/user_name/
+#SBATCH --nodes=1
+#SBATCH --partition=NOParalela
+#SBATCH --ntasks=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --job-name=job_name
+#SBATCH --error=/SCRATCH/research_group/user_name/%j.err
+#SBATCH --output=/SCRATCH/research_group/user_name/%j.out
+#SBATCH --time=50:00:00
+
+# COMMANDS:
+
+# module loading
+module load FSL/6.0.5.2
+
+# sourcing
+. /usr/local/apps/FSL/FSL-6.0.5.2/fsl/etc/fslconf/fsl.sh
+
+# Here goes your code
+
+# Step 1.
+path2results=/SCRATCH/research_group/user_name/
+
+ _ _ _ _ _ _ 
+|Up to here |
+ - - - - - - 
