@@ -1,28 +1,13 @@
-# eeg-preprocessing
-This repository contains a set of preprocessing routines for EEG signals. 
+# MRI-preprocessing
 
-**Notes:** 
- - EEGLAB should be installed and running to execute this script.
- - BVA-io plug-in for EEGLAB should be installed in order to load Brain Vision Analyzer EEG data files.
+To preprocess using fmri-prep, follow the installation steps at https://fmriprep.org/en/1.5.5/docker.html
 
-# Automatic EEG preprocessing steps:
 
-### Preprocessing steps before computing Idependent Component Analysis:
+Docker is a container that must be previously installed (https://www.docker.com/).
 
- - Rename events.
- - Change sampling rate.
- - Filter data.
- - Generate epoched dataset
+Once fmri-prep is installed in Docker, you have to write in the terminal something similar to:
+docker run -ti --rm -e 01 -v C:\Users\Usuario\Documents\PYTHON\RESONANCIA/:/data:ro -v C:\Users\Usuario\Documents\PYTHON\RESONANCIA\derivatives:/output -v  C:\Users\Usuario\Documents\PYTHON\RESONANCIA:/lic poldracklab/fmriprep:latest /data /output participant --participant_label 01 --fs-license-file /lic/license.txt --stop-on-first-crash
 
-### Independent Component Analysis:
+This must be modified according to your preprocessing. All the information is available in the previous link.
 
- - Compute ICA.
- - Delete bad components.
 
-### Rest of the preprocessing pipeline:
-
- - Automatic trial rejection.
- - Electrodes interpolation.
- - Recover reference electrode.
- - Compute re-reference.
- - Extract conditions.
