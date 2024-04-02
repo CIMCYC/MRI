@@ -25,8 +25,11 @@ Next, you will need to update the squence parameters that you used in your exper
 
 For the reference slice and the type of smoothing we will leave default values. 
 
-In this point, you only have to adjust the directories where you have stored your images in BIDS format. 
+In this point, you only have to adjust the directories where you have stored your images in BIDS/dicom format. 
 
 Finally, throughout the script, files that are included in the folder where SPM is installed are called several times. You must update that path to match the path of the PC you are using. Just search every time that it appears in the code: “C:\Users\carlos\Documents\MATLAB\spm12\” and replace it with the path of your computer. 
  
 Once all this is done, you can run the preprocessing_BIDS_SPM12. m code. 
+
+
+Pre-processed images are not in BIDS format. They are renamed according to SPM.
