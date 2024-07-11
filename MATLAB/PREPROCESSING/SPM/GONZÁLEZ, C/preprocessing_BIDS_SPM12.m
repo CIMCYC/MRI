@@ -1,4 +1,4 @@
-function preprocessing_BIDS_antivea(sub_list)
+function preprocessing_BIDS_SPM12(sub_list)
 for sub = sub_list
     %{
 This functions runs a standard preprocessing pipeline in SPM12. Make sure SPM12 is in your matlab path.
